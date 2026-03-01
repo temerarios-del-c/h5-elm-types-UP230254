@@ -7,20 +7,21 @@ type GradeStatus
     | Pending
 
 
+evaluarNota : Float -> GradeStatus
+evaluarNota nota =
+    if nota < 0 then
+        Pending
+
+    else if nota > 7 then
+        Approved
+
+    else
+        Failed
+
+
 categoricalGrade : List Float -> List GradeStatus
 categoricalGrade grades =
-    let
-        evaluateGrade grade =
-            if grade < 0 then
-                Pending
-
-            else if grade >= 7 then
-                Approved
-
-            else
-                Failed
-    in
-    List.map evaluateGrade grades
+    List.map evaluarNota grades
 
 
 type AirplaneStatus
