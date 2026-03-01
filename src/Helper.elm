@@ -1,7 +1,5 @@
 module Helper exposing (..)
 
--- 1.0
-
 
 type GradeStatus
     = Approved
@@ -16,7 +14,7 @@ categoricalGrade grades =
             if grade < 0 then
                 Pending
 
-            else if grade > 7 then
+            else if grade >= 7 then
                 Approved
 
             else
@@ -25,19 +23,11 @@ categoricalGrade grades =
     List.map evaluateGrade grades
 
 
-
--- 2.1
-
-
 type AirplaneStatus
     = OnTime
     | Boarding
     | Delayed
     | Cancelled
-
-
-
--- 2.2
 
 
 airplaneScheduleAction : AirplaneStatus -> String
@@ -54,10 +44,6 @@ airplaneScheduleAction status =
 
         Boarding ->
             "Buscar boleto"
-
-
-
--- 2.3
 
 
 airportAction : List AirplaneStatus -> List String
