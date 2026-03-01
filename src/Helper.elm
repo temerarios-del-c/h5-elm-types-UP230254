@@ -12,7 +12,7 @@ evaluarNota nota =
     if nota < 0 then
         Pending
 
-    else if nota > 7 then
+    else if nota >= 7 then
         Approved
 
     else
